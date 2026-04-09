@@ -23,7 +23,7 @@ struct CarDecodingTests {
                 "model": "Golf",
                 "year": 2020,
                 "fuelType": "Gasoline",
-                "images": ["https://example.com/photo.jpg"],
+                "images": ["https://picsum.photos/200/300"],
                 "address": {
                     "city": "Amsterdam"
                 }
