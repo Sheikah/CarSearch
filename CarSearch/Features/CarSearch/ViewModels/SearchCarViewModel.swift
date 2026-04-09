@@ -49,6 +49,7 @@ final class SearchCarViewModel {
     private var currentOffset = 0
     private var searchTask: Task<Void, Never>?
     private var paginationTask: Task<Void, Never>?
+    private var debounceTask: Task<Void, Never>?
 
     // MARK: - Init
 
@@ -58,8 +59,10 @@ final class SearchCarViewModel {
 
     // MARK: - City Search
 
-    /// Filters the hardcoded city list locally.
+    /// Filters the hardcoded city list locally with a 500ms debounce.
     func onSearchTextChanged() {
+        debounceTask?.cancel()
+
         let query = searchText.trimmingCharacters(in: .whitespaces).lowercased()
 
         guard !query.isEmpty else {
@@ -67,7 +70,11 @@ final class SearchCarViewModel {
             return
         }
 
-        citySuggestions = City.all.filter { $0.name.lowercased().contains(query) }
+        debounceTask = Task {
+            try? await Task.sleep(for: .milliseconds(500))
+            guard !Task.isCancelled else { return }
+            citySuggestions = City.all.filter { $0.name.lowercased().contains(query) }
+        }
     }
 
     /// Called when the user selects a city from suggestions.
