@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CarRowView: View, Equatable {
     let car: Car
@@ -29,18 +30,10 @@ struct CarRowView: View, Equatable {
     private var carImage: some View {
         Group {
             if let url = car.imageURL {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    case .failure, .empty:
-                        imagePlaceholder
-                    @unknown default:
-                        imagePlaceholder
-                    }
-                }
+                KFImage(url)
+                    .placeholder { imagePlaceholder }
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
             } else {
                 imagePlaceholder
             }

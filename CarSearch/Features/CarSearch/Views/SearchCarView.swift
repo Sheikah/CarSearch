@@ -106,7 +106,7 @@ struct SearchCarView: View {
         ContentUnavailableView(
             "Search for Cars",
             systemImage: "car.2",
-            description: Text("Enter a city name above to find available cars.")
+            description: Text("Enter a city name below to find available cars.")
         )
     }
 
