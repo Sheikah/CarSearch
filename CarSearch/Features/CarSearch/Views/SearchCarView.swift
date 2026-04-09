@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchCarView: View {
     @State private var viewModel = SearchCarViewModel()
+    @State private var isSearching = false
 
     var body: some View {
         NavigationStack {
@@ -18,7 +19,7 @@ struct SearchCarView: View {
                 resultsList
             }
             .navigationTitle("Car Search")
-            .searchable(text: $viewModel.searchText, prompt: "Search for a city…")
+            .searchable(text: $viewModel.searchText, isPresented: $isSearching, prompt: "Search for a city…")
             .searchSuggestions {
                 citySuggestions
             }
@@ -33,7 +34,12 @@ struct SearchCarView: View {
     private var citySuggestions: some View {
         ForEach(viewModel.citySuggestions) { city in
             Button {
+                let cityName = city.name
                 viewModel.selectCity(city)
+                isSearching = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    viewModel.searchText = cityName
+                }
             } label: {
                 HStack {
                     VStack(alignment: .leading) {
