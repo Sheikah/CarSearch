@@ -13,14 +13,30 @@
 		85E25F532F87B79A00FD2527 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 85E25F522F87B79A00FD2527 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		85A1B0012F87C00000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 850EB3362F85739B00C533E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 850EB33D2F85739B00C533E9;
+			remoteInfo = CarSearch;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		850EB33E2F85739B00C533E9 /* CarSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85A1B0032F87C00000000001 /* CarSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		850EB3402F85739B00C533E9 /* CarSearch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = CarSearch;
+			sourceTree = "<group>";
+		};
+		85A1B0042F87C00000000001 /* CarSearchTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CarSearchTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +53,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85A1B0052F87C00000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				850EB3402F85739B00C533E9 /* CarSearch */,
+				85A1B0042F87C00000000001 /* CarSearchTests */,
 				850EB33F2F85739B00C533E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				850EB33E2F85739B00C533E9 /* CarSearch.app */,
+				85A1B0032F87C00000000001 /* CarSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +110,27 @@
 			productReference = 850EB33E2F85739B00C533E9 /* CarSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		85A1B0062F87C00000000001 /* CarSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85A1B00B2F87C00000000001 /* Build configuration list for PBXNativeTarget "CarSearchTests" */;
+			buildPhases = (
+				85A1B0072F87C00000000001 /* Sources */,
+				85A1B0052F87C00000000001 /* Frameworks */,
+				85A1B0082F87C00000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85A1B0022F87C00000000001 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				85A1B0042F87C00000000001 /* CarSearchTests */,
+			);
+			name = CarSearchTests;
+			productName = CarSearchTests;
+			productReference = 85A1B0032F87C00000000001 /* CarSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,7 +142,11 @@
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					850EB33D2F85739B00C533E9 = {
-						CreatedOnToolsVersion = 26.3;
+					    CreatedOnToolsVersion = 26.3;
+					};
+					85A1B0062F87C00000000001 = {
+					    CreatedOnToolsVersion = 26.3;
+					    TestTargetID = 850EB33D2F85739B00C533E9;
 					};
 				};
 			};
@@ -119,12 +169,20 @@
 			projectRoot = "";
 			targets = (
 				850EB33D2F85739B00C533E9 /* CarSearch */,
+				85A1B0062F87C00000000001 /* CarSearchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		850EB33C2F85739B00C533E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85A1B0082F87C00000000001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -141,7 +199,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85A1B0072F87C00000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85A1B0022F87C00000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 850EB33D2F85739B00C533E9 /* CarSearch */;
+			targetProxy = 85A1B0012F87C00000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		850EB3472F85739D00C533E9 /* Debug */ = {
@@ -329,6 +402,48 @@
 			};
 			name = Release;
 		};
+		85A1B0092F87C00000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B9AZLYXZ35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = daanvermeulen.CarSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarSearch";
+			};
+			name = Debug;
+		};
+		85A1B00A2F87C00000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B9AZLYXZ35;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = daanvermeulen.CarSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CarSearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -346,6 +461,15 @@
 			buildConfigurations = (
 				850EB34A2F85739D00C533E9 /* Debug */,
 				850EB34B2F85739D00C533E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85A1B00B2F87C00000000001 /* Build configuration list for PBXNativeTarget "CarSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85A1B0092F87C00000000001 /* Debug */,
+				85A1B00A2F87C00000000001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

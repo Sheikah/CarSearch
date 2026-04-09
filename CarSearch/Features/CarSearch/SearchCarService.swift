@@ -8,15 +8,15 @@
 import Foundation
 
 /// A lightweight wrapper around the API response. Only used internally for decoding.
-private nonisolated struct SearchResponse: Decodable, Sendable {
+nonisolated struct SearchResponse: Decodable, Sendable {
     let results: [Car]
 }
 
 /// Fetches car search results from the SnappCar API.
 nonisolated struct SearchCarService: Sendable {
-    private let client: HTTPClient
+    private let client: any HTTPClientProtocol
 
-    init(client: HTTPClient = HTTPClient()) {
+    init(client: any HTTPClientProtocol = HTTPClient()) {
         self.client = client
     }
 

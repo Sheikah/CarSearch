@@ -7,7 +7,12 @@
 
 import Foundation
 
-nonisolated struct HTTPClient: Sendable {
+/// Protocol that abstracts HTTP fetching, enabling stubbing in tests.
+protocol HTTPClientProtocol: Sendable {
+    func fetch<T: Decodable & Sendable>(_ endpoint: Endpoint) async throws -> T
+}
+
+nonisolated struct HTTPClient: HTTPClientProtocol, Sendable {
     private let session: URLSession
 
     init(session: URLSession = .shared) {
